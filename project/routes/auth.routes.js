@@ -10,15 +10,41 @@ const User = require("../models/User.model");
 
 
 
-router.get("/signin", (req, res) =>{
+router.get("/login", (req, res) =>{
 
-    res.render("auth/signin");
+    res.render("auth/login");
 
 })
 
-router.get("/register", (req, res)=>{
+router.get("/signup", (req, res)=>{
     console.log(req.session);
-    res.render("auth/register");
+    res.render("auth/signup");
+})
+
+
+router.post("/signup", (req, res) => {
+    const newUser = req.body;
+    const {name, email, password} = newUser;
+    console.log(newUser);
+
+
+    bcrypt.hash(password, saltRounds)
+        .then(hashPassword =>{
+            return User.create({
+                name,
+                email,
+                password: hashPassword
+            })
+        .then(user => {
+            res.redirect('/auth/login')
+            })
+        })
+  
+})
+
+
+router.post("/login", (req, res) =>{
+
 })
 
 
