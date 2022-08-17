@@ -27,7 +27,7 @@ app.use(
         mongoUrl: 'mongodb://localhost',
         ttl: 60 * 30, // seconds
     }),
-    // name: 'session_id',
+    name: 'session_id',
     cookie: {
       maxAge: 1000 * 60 * 10, // ms
     }

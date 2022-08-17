@@ -5,7 +5,7 @@ const userSchema = new Schema(
   {
     email: String,
     password: String,
-    fullName: String,
+    name: String,
     // slack login - optional
     slackID: String,
     // google login - optional
