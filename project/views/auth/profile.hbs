@@ -1,3 +1,28 @@
-<h1>Welcome to your Profile, {{result.name}}</h1>
+
+{{#if theUser}}
+<h1>Welcome to your Profile, {{theUser.name}}</h1>
+<a id="new-room-link" href="../auth/newroom">New Room</a>
+
+{{else}}
+<h1>Welcome, you should create a profile to access to the full capabilities of this site {{result.name}}</h1>
+
+{{/if}}
 
 
+
+<section id="gallery">
+    {{#each rooms}}
+    <section class="gallery-item">
+        <h3 class="gallery-item-name">{{this.name}}</h3>
+        <p class="gallery-item-description">{{this.description}}</p>
+
+        {{#if this.imageUrl}}
+        <img src="{{this.imageUrl}}" class="gallery-item-img" />
+        {{/if}}
+        
+        <span class="gallery-item-owner"></span>
+        <a href="{{this._id}}/edit" ><button type="submit">Edit</button></a>
+    </section>
+
+    {{/each}}
+</section>

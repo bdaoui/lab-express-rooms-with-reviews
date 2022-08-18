@@ -12,9 +12,15 @@
    <body>
       
       <nav>
+
+      
+
+      {{#if theUser }}   
+         <a href="/auth/logout">Sign Out</a>
+      {{else}}
          <a href="/auth/signup">Sign Up</a>
          <a href="/auth/login">Sign In</a>
-         <a href="/auth/logout">Sign Out</a>
+      {{/if}}
       </nav>
 
       {{{body}}}

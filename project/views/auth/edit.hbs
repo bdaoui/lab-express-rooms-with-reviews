@@ -1,0 +1,13 @@
+{{#if check}}
+
+<h1>Edit Room</h1>
+
+<form action="/auth/{{response._id}}/edit" method="post">
+    <input type="text" name="name" value="{{response.name}}" required>
+    <textarea name="description"  required>{{response.description}} </textarea>
+    <input type="text" name="imageUrl" value="{{response.imageUrl}}" required>
+  <button type="submit">Edit ROOM</button>
+  {{else}}
+  <h1>Only the Owner Can Do That D:</h1>
+</form>
+{{/if}}

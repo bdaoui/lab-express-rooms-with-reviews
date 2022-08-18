@@ -1,12 +1,71 @@
 body {
-  padding: 50px;
+  padding: 40px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: aquamarine;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 a {
   color: #00b7ff;
 }
 
+#new-room-link{
+  margin-bottom: 5%;
+}
+
 h1 {
   color: 15px;
+}
+
+
+nav{
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 5vh;
+
+}
+
+nav a{
+  margin: 1%;
+  min-width: 20vw;
+  text-align: center;
+
+}
+
+
+
+/* Gallery of Rooms */
+
+#gallery{
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  justify-content: space-around;
+
+  max-width: 50vw;
+
+}
+
+.gallery-item{
+  background-color: black;
+  color: aliceblue;
+
+  min-width: 15vw;
+
+  margin: 3%;
+}
+
+.gallery-item img{
+  max-width: 30vw;
+
 }
